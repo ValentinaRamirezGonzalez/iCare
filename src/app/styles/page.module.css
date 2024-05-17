@@ -1,0 +1,159 @@
+
+.contenedor{
+    margin: 0 auto; 
+    
+}
+
+.fondo{
+    background-color: #F0EBFA;
+    text-align: center;
+    margin: 0;
+    padding:10rem;
+    padding-top: 5rem;
+}
+.titulo{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    color: #35414B;
+    font-size: 54px;
+}
+@media(max-width:768px){
+    .titulo{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 42px;
+        margin: 0 auto;
+    }
+
+}
+.imagen{
+    display: flex;
+    max-width: 80%;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: -10rem;
+    
+}
+.sectionChat{
+    padding: 5rem;
+    display: grid;
+    grid-template-columns:2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+
+.sectionChat div{
+    padding: 1rem;
+}
+.imagenChat{
+    width:50rem;
+    height:35rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 3%;
+}
+.confidencialidad{
+    background-color: #F0EBFA;
+    border-radius: 2%;
+}
+.itemsChat{
+    margin: 0;
+    padding: 0;
+}
+    
+
+.parrafo{
+    margin: 0 auto;
+    width: 85%;
+    text-align: center;
+}
+.imagenForo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:860.2px;
+    height: 1066px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+@media(max-width:1023px){
+    .sectionChat{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .sectionChat div{
+        padding: 0;
+        margin: 0 auto;
+
+    }
+    .imagenChat{
+        width: 100%;
+        height: fit-content;
+        margin: 0 auto;
+        padding: 0;
+
+    }
+    .imagenForo{
+        width: 100%;
+        height: fit-content;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+
+}
+
+.sectionJuntos{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.sectionJuntos h2{
+    font-size: 40px;
+}
+.sectionJuntos p{
+    font-weight: 600;
+    font-size: 22px;
+    
+}
+.descargas{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 auto;
+    width: 1285px;
+    height: 282px;
+    background-color: #796EFF;
+    border-radius: 2%;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+.descargas p{
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    line-height: 48px;
+}
+.iconos{
+    width: 360px;
+    height: fit-content;
+}
+
+@media(max-width:1023px){
+    .descargas{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    
+}
