@@ -20,7 +20,7 @@ const RegisterPage = () => {
         return alert('las Contraseñas no Coinciden');
       }
     
-      const res = await fetch('/api/auth/singup',{
+      const res = await fetch('/api/auth/signin',{
         method:'POST',
         body: JSON.stringify({
           username: data.username,
