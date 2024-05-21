@@ -2,28 +2,18 @@
   "name": "proyecto-icare",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate"
+    "dev": "nodemon server/index.js"
   },
   "dependencies": {
-    "@prisma/client": "^5.13.0",
-    "axios": "^1.6.8",
-    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.9.7",
-    "next": "14.2.2",
-    "next-auth": "^4.24.7",
-    "normalize.css": "^8.0.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-hook-form": "^7.51.4"
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
-    "prisma": "^5.13.0"
+    "nodemon": "^3.1.0"
   }
 }
