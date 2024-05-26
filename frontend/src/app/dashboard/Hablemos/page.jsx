@@ -1,15 +1,18 @@
+import Chat from '@/app/components/Chat'
 import Footer from '@/app/components/Footer'
 import Header from '@/app/components/Header'
 import React from 'react'
 
-const page = () => {
+
+const Hablemos= () => {
   return (
     <div>
         <Header/>
+        <Chat/>
         <Footer/>
       
     </div>
   )
 }
 
-export default page
+export default Hablemos

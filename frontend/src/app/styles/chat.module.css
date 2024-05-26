@@ -1,0 +1,50 @@
+.contenedor{
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #F0EBFA;
+    padding: 6rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.contenedor li{
+    background-color: #F0EBFA;
+    margin: 1rem auto;
+    padding: 1rem;
+    height: auto !important; 
+    width: auto;    
+    word-wrap: break-word;
+}
+.contenedor ul{
+    background-color:  #fff;
+    width: 90%;
+    max-height: 25rem;
+    padding: 2rem;
+    overflow: scroll;
+}
+
+.contenedor form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    
+}
+.contenedor input{
+    padding: 2rem;
+    height: 30px;    
+    border: none;
+
+}
+.contenedor button{
+    display: grid;
+    padding: .8rem;
+    width: 40%;
+    margin: 1rem auto;
+    justify-content: center;
+    background-color:  #796EFF;
+    border: .7px solid #fff ;
+    border-radius: 5px;
+    color: #fff;
+    
+}

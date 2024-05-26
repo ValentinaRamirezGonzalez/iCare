@@ -11,10 +11,15 @@ const io = new SocketServer(server,{
         origin:"http://localhost:3000"
     }
 
-})
+});
 
 io.on('connection',socket=>{
     console.log('client conected')
+
+    socket.on('message',(data)=>{
+        socket.broadcast.emit('message',data)
+    
+})
 })
 
 server.listen(4000
