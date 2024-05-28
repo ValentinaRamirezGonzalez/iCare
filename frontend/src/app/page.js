@@ -33,12 +33,12 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.imagenHero}>
-          <Image src={imagenHero} className={styles.imagen} />
+          <Image src={imagenHero} className={styles.imagen} alt="imagen manos" />
         </div>
       </main>
 
       <section className={styles.sectionChat}>
-        <Image src={chat} className={styles.imagenChat} />
+        <Image src={chat} className={styles.imagenChat} alt="imagen chat" />
 
         <div className={styles.itemsChat}>
           <div className={styles.confidencialidad}>
@@ -87,7 +87,7 @@ export default function Home() {
         en nuestro foro
       </p>
 
-      <Image src={foro} className={styles.imagenForo} />
+      <Image src={foro} className={styles.imagenForo} alt="imagen foro" />
 
       <section className={styles.sectionJuntos}>
         <h2>Juntos somos Más Fuertes</h2>
@@ -108,7 +108,7 @@ export default function Home() {
             en cualquier momento y lugar
           </p>
 
-          <Image src={iconos} className={styles.iconos}/>
+          <Image src={iconos} className={styles.iconos} alt="icono google"/>
         
       </div>
 

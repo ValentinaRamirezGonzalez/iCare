@@ -4,9 +4,6 @@ import db from "@/libs/db";
 import bcrypt from "bcrypt";
 
 
-
-
-
  export const authOptions = {
   providers: [
     CredentialsProvider({
@@ -39,6 +36,8 @@ import bcrypt from "bcrypt";
       },
     }),
   ],
+  
+  
   pages:{
     signIn:"../../../dashboard/Inicio"
   },
@@ -52,6 +51,7 @@ import bcrypt from "bcrypt";
       // Allows callback URLs on the same origin
       else if (new URL(url).origin === baseUrl) return url
       return baseUrl
+   
     }
   }
   
