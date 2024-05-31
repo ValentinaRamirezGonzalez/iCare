@@ -12,7 +12,7 @@
   "dependencies": {
     "@prisma/client": "^5.14.0",
     "@supabase/supabase-js": "^2.43.2",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
@@ -24,7 +24,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.51.4",
+    "react-hook-form": "^7.51.5",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
   },
