@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../styles/foro.module.css'
+import prisma from '@/libs/db';
 
 const NewPost = () => {
   const [title, setTitle] = useState('');
@@ -9,7 +10,7 @@ const NewPost = () => {
   const router = useRouter();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    
     try {
       const response = await fetch('/api/create', {
         method: 'POST',
@@ -26,7 +27,7 @@ const NewPost = () => {
       } 
       const result = await response.json();
       console.log(result.message); // Mensaje de éxito
-      router.push('/');
+      alert('Post Creado correctamente');
 
     } catch (error) {
       console.error('Error creating post:', error.message);
@@ -37,10 +38,11 @@ const NewPost = () => {
 
   return (
     <>
-    <div >
+    <div className={styles.container}>
       <h1>New Post</h1>
       <form onSubmit={handleSubmit} className={styles.contenedor}>
-          <div>
+          <div className={styles.contenido}>
+          
           <label htmlFor="title">Titulo</label>
           <input
             type="text"
@@ -49,7 +51,7 @@ const NewPost = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
           </div>
-          <div>
+          <div  className={styles.contenido}>
           <label htmlFor="content">Content:</label>
           <textarea
             id="content"
