@@ -1,10 +1,9 @@
 "use client";
 import { useForm } from "react-hook-form";
-import {signIn, signOut} from 'next-auth/react'
+import { signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import styles from '../../../styles/inicio.module.css'
-
+import styles from "../../../styles/inicio.module.css";
 
 
 const LoginPage = () => {
@@ -14,32 +13,26 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-  const router=useRouter()
-  const [error,setError]=useState(null)
-  
+  const router = useRouter();
+  const [error, setError] = useState(null);
 
-  const onSubmit= handleSubmit(async data =>{
-  const res = await signIn('credentials',{
+  const onSubmit = handleSubmit(async (data) => {
+    const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
-      redirect:false
-
-
-     });
-     if(res.error){
-      setError(res.error)
-     }else{
-      router.push('/')
-     }
-  })
+      redirect: false,
+    });
+    if (res.error) {
+      setError(res.error);
+    } else {
+      router.push("/");
+    }
+  });
 
   return (
     <div>
       <form className={styles.contenedor} onSubmit={onSubmit}>
-
-        {error && (
-          <p>{error}</p>
-        )}
+        {error && <p>{error}</p>}
         <h1>Iniciar Sesion</h1>
         <label htmlFor="email">Email:</label>
         <input
@@ -67,10 +60,7 @@ const LoginPage = () => {
         />
         {errors.password && <span>{errors.password.message}</span>}
 
-      <button>Iniciar sesion</button>
-      <button onClick={()=>signOut()}>Cerrar Sesion</button>
-
-        
+        <button>Iniciar sesion</button>
         
       </form>
     </div>

@@ -42,3 +42,29 @@ padding: 2rem;
     color: #fff;
     
 }
+.hidden{
+    display: none;
+}
+
+.iniciar{
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    text-align: center;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    background-color:  #796EFF;
+    border: .7px solid #fff ;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    padding: .7rem;
+    width: 160px;
+    margin:0 auto;
+    margin-top: 1rem;
+    
+    
+}

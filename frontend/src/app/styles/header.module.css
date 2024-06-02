@@ -83,4 +83,10 @@
     padding: .8rem;
     color: #35414B;
 }
-
+.closeButton{
+    border-radius: 7px;
+    background-color: #796EFF;
+     color: #fff;
+    padding: .2rem;
+    border-color:  #796EFF;
+}
