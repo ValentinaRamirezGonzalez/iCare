@@ -11,7 +11,7 @@ import { signOut, useSession } from "next-auth/react";
 function Header() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
-  console.log(session)
+  
  
 
   const Menu = () => {

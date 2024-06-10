@@ -1,16 +1,29 @@
 .contenedor{
-    background-color: #F0EBFA;
-    text-align: center;
+    background-color: #fff;
     padding: 2rem;
     margin-top: 2rem;
+    text-align: center;
 }
 .contenido{
-    background-color: #fff;
-    width: 80%;
-    border-radius: 3rem;
+    background-color:  #F0EBFA;
+    width: 90%;
     margin: 1rem auto;
     height: 10rem;
     word-wrap: break-word;
-    padding: 2rem;
+    padding: .5rem;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    border-left: 4px solid #796EFF;
+}
+
+.contenido p{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: .9rem;
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+.contenido h2{
+    text-transform: uppercase;
+    color: #796EFF;
 }

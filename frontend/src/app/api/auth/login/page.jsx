@@ -33,7 +33,7 @@ const LoginPage = () => {
     <div>
       <form className={styles.contenedor} onSubmit={onSubmit}>
         {error && <p>{error}</p>}
-        <h1>Iniciar Sesion</h1>
+        <h1>Iniciar Sesión</h1>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -60,7 +60,7 @@ const LoginPage = () => {
         />
         {errors.password && <span>{errors.password.message}</span>}
 
-        <button>Iniciar sesion</button>
+        <button>Iniciar sesión</button>
         
       </form>
     </div>

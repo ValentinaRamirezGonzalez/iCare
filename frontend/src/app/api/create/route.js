@@ -1,7 +1,8 @@
 import { PrismaClient } from '@prisma/client';
-import { NextResponse } from 'next/server';
+
 
 const prisma = new PrismaClient();
+
 
 export async function POST(req, res) {
 
@@ -19,8 +20,8 @@ export async function POST(req, res) {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    // const data=await newPost.json();
-    // return NextResponse.json(data);
+    const data=await newPost.json();
+    return NextResponse.json(data);
     
 
   } catch (error) {
