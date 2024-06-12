@@ -1,6 +1,6 @@
 'use client'
 import Footer from '@/app/components/Footer'
-import Foro from '@/app/components/Foro'
+import Foro from '@/pages/Foro'
 import Header from '@/app/components/Header'
 import NewPost from '@/app/components/NewPost'
 import React from 'react'

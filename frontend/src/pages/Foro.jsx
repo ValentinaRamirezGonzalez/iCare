@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "../styles/listadoForo.module.css";
+import styles from "../app/styles/listadoForo.module.css";
 import { useSession } from "next-auth/react";
 
 
@@ -29,8 +29,20 @@ export default function Foro() {
     fetchPosts()
   }, [])
 
-  const handleDeletePost=(deletedPostId)=>{
-    setPosts(posts.filter(post=>post.id!==deletedPostId));
+  const handleDelete = async (postId) => {
+    try {
+      const response = await fetch(`/api/deletepost/${postId}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete post');
+      }
+      // Si la eliminación fue exitosa, actualiza la lista de eventos
+      const updatedPost = posts.filter((post) => post.id !== postId);
+      setPosts(updatedPost);
+    } catch (error) {
+      console.error('Error deleting posts:', error);
+    }
   };
 
   
@@ -53,6 +65,8 @@ export default function Foro() {
               <h2>{post.title}</h2>
               <p>{post.content}</p>
               <p className={styles.date}>Fecha de Publicación: {new Date(post.createdAt).toLocaleDateString()}</p>
+              <button onClick={() => handleDelete(post.id)}>Eliminar</button>
+            
             </div>
           </div>
 
