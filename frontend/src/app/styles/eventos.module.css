@@ -1,0 +1,30 @@
+.contenedor{
+ display: flex;
+ flex-direction: column;
+ margin: 0 auto;
+
+}
+.contenedor h3{
+    color: #796EFF;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.contenido{
+    margin: 0 auto;
+    background-color: #F0EBFA;
+    padding: 1rem;
+    width: 90%;
+    margin-bottom: 1rem;
+    border-left: #796EFF solid 4px;
+
+}
+.titulo{
+    text-align: center;
+}
+.date{
+    font-weight: bold;
+    color: #796EFF;
+}
+.hidden{
+    visibility: hidden;
+}

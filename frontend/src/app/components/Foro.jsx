@@ -52,7 +52,7 @@ export default function Foro() {
             <div className={styles.contenido}>
               <h2>{post.title}</h2>
               <p>{post.content}</p>
-              <p>Fecha de Publicación: {new Date(post.createdAt).toLocaleDateString()}</p>
+              <p className={styles.date}>Fecha de Publicación: {new Date(post.createdAt).toLocaleDateString()}</p>
             </div>
           </div>
 

@@ -50,7 +50,7 @@ const NewPost = () => {
         <Link href={"/dashboard/Registro"} className={styles.boton}>Registrate</Link>
       </div>
       <div className={`${session ? styles.container : styles.hidden}`}>
-        <h1>New Post</h1>
+        <h1>Nueva Publicacion</h1>
         <form onSubmit={handleSubmit} className={styles.contenedor}>
           <div className={styles.contenido}>
           {session ?(<p>Bienvenido <span className={styles.nombre}>{session.user.name}</span>, Te invitamos a participar siguiendo las normas de convivencia y respeto mutuo. Queremos crear un espacio inclusivo y colaborativo donde puedas compartir tus ideas y experiencias de manera anónima. ¡Esperamos tus contribuciones!"</p>):(
@@ -72,7 +72,7 @@ const NewPost = () => {
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit">Create Post</button>
+          <button type="submit">Publicar</button>
         </form>
       </div>
     </>

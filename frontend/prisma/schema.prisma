@@ -28,3 +28,11 @@ model Post {
   content   String
   createdAt DateTime @default(now())
 }
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
