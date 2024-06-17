@@ -4,13 +4,17 @@
 import { useEffect, useState } from 'react';
 import styles from '../app/styles/eventos.module.css'
 import { useSession } from 'next-auth/react';
+import Skeleton from '@/app/components/Skeleton';
+
 
 
 
 
 export default function ListadoEventos() {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { data: session,status } = useSession();
+ 
   
 
   
@@ -20,8 +24,11 @@ export default function ListadoEventos() {
       const response = await fetch('/api/listadoeventos');
       const data = await response.json();
       setEvents(data);
+      setLoading(false)
+      
     }
     fetchEvents();
+  
   }, []);
 
   
@@ -40,8 +47,15 @@ export default function ListadoEventos() {
       console.error('Error deleting event:', error);
     }
   };
-  if (status === 'loading') {
-    return <p>Cargando...</p>;
+  if (status === 'loading' || loading) {
+    return (
+      <div className={styles.skeletonContainer}>
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+
+      </div>
+    )
   }
   
   

@@ -1,0 +1,48 @@
+
+
+@keyframes loadingShimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .skeleton {
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    padding: 16px;
+    position: relative;
+  }
+  
+  .skeletonHeader,
+  .skeletonLine {
+    background: #e0e0e0;
+    background: linear-gradient(to right, #e0e0e0 0%, #f0f0f0 50%, #e0e0e0 100%);
+    background-size: 200% 100%;
+    animation: loadingShimmer 1.5s infinite;
+  }
+  
+  .skeletonHeader {
+    height: 30px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  }
+  
+  .skeletonContent {
+    padding: 16px 0;
+  }
+  
+  .skeletonLine {
+    height: 20px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+  
+  .skeletonLine:last-child {
+    margin-bottom: 0;
+  }
+  

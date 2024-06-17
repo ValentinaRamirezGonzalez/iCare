@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import styles from "../app/styles/listadoForo.module.css";
 import { useSession } from "next-auth/react";
+import Skeleton from "@/app/components/Skeleton";
+
 
 
 export default function Foro() {
 
   
   const [posts, setPosts] = useState([]);
-  const {data:session}=useSession();
+  const [loading, setLoading]=useState(true);
+  const {data:session,status}=useSession();
  
 
   useEffect(() => {
@@ -24,6 +27,7 @@ export default function Foro() {
       } catch (error) {
         console.error('Error fetching posts:', error)
       }
+      setLoading(false)
     }
 
     fetchPosts()
@@ -45,6 +49,17 @@ export default function Foro() {
     }
   };
 
+  if (status === 'loading' || loading) {
+    return (
+      <div className={styles.skeletonContainer}>
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+
+      </div>
+    )
+  }
+
   
   return (
     <div className={styles.contenedor}>
@@ -65,7 +80,11 @@ export default function Foro() {
               <h2>{post.title}</h2>
               <p>{post.content}</p>
               <p className={styles.date}>Fecha de Publicación: {new Date(post.createdAt).toLocaleDateString()}</p>
-              <button onClick={() => handleDelete(post.id)}>Eliminar</button>
+
+              {session && session.user.email === 'tajaramirez@gmail.com' && (
+                <button onClick={() => handleDelete(post.id)}>Eliminar</button>)}
+                
+              
             
             </div>
           </div>

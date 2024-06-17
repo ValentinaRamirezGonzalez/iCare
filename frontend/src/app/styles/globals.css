@@ -1,3 +1,33 @@
 body{
     color: #35414B;
 }
+
+.skeleton {
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .skeletonHeader {
+    height: 30px;
+    background: #e0e0e0;
+    margin-bottom: 16px;
+  }
+  
+  .skeletonContent {
+    padding: 16px;
+  }
+  
+  .skeletonLine {
+    height: 20px;
+    background: #e0e0e0;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+  
+  .skeletonLine:last-child {
+    margin-bottom: 0;
+  }
+  
