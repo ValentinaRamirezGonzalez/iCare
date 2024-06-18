@@ -50,7 +50,7 @@ export default function Foro() {
   };
 
 
-  if (status === 'loading' || loading) {
+  if (!session || status === 'loading' || loading) {
     return (
       <div className={styles.skeletonContainer}>
         <Skeleton />

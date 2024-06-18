@@ -47,7 +47,7 @@ export default function ListadoEventos() {
       console.error('Error deleting event:', error);
     }
   };
-  if (status === 'loading' || loading) {
+  if (!session || status === 'loading' || loading) {
     return (
       <div className={styles.skeletonContainer}>
         <Skeleton />
