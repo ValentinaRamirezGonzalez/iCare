@@ -49,6 +49,7 @@ export default function Foro() {
     }
   };
 
+
   if (status === 'loading' || loading) {
     return (
       <div className={styles.skeletonContainer}>
@@ -81,7 +82,7 @@ export default function Foro() {
               <p>{post.content}</p>
               <p className={styles.date}>Fecha de Publicación: {new Date(post.createdAt).toLocaleDateString()}</p>
 
-              {session && session.user.email === 'tajaramirez@gmail.com' && (
+              {session && session.user && session.user.email === 'tajaramirez@gmail.com' && (
                 <button onClick={() => handleDelete(post.id)}>Eliminar</button>)}
                 
               
