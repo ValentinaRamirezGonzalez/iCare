@@ -71,7 +71,7 @@ export default function ListadoEventos() {
             <p>{event.description}</p>
             <p className={styles.dat}>Date: {new Date(event.date).toLocaleString()}</p>
             
-            {session && session.user.email === 'tajaramirez@gmail.com' && (
+            {session&& session.user && session.user.email === 'tajaramirez@gmail.com' && (
                 <button onClick={() => handleDelete(event.id)}>Eliminar</button>)}
             </div>
           </li>
