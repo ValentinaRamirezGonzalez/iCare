@@ -7,7 +7,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/front/$1"
+      "destination": "/frontend/$1"
     }
   ]
 }
