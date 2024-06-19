@@ -2,6 +2,7 @@
 import express from 'express'
 import http from 'http'
 import { Server as SocketServer } from 'socket.io'
+import { PORT } from './config.js'
 
 
 const app = express()
@@ -22,6 +23,5 @@ io.on('connection',socket=>{
 })
 })
 
-server.listen(4000
-)
-console.log('server on port', 4000)
+server.listen(PORT);
+console.log('server on port', PORT)

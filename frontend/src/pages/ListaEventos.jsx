@@ -3,8 +3,9 @@
 
 import { useEffect, useState } from 'react';
 import styles from '../app/styles/eventos.module.css'
-import { useSession } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react';
 import Skeleton from '@/app/components/Skeleton';
+import { fetchData } from 'next-auth/client/_utils';
 
 
 
@@ -13,7 +14,7 @@ import Skeleton from '@/app/components/Skeleton';
 export default function ListadoEventos() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { data: session,status } = useSession();
+  const { data:session,status } = useSession();
  
   
 
@@ -47,7 +48,7 @@ export default function ListadoEventos() {
       console.error('Error deleting event:', error);
     }
   };
-  if (!session || status === 'loading' || loading) {
+  if ( status === 'loading' || loading) {
     return (
       <div className={styles.skeletonContainer}>
         <Skeleton />
@@ -57,6 +58,7 @@ export default function ListadoEventos() {
       </div>
     )
   }
+ 
   
   
 
@@ -79,4 +81,31 @@ export default function ListadoEventos() {
       </ul>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  let events = [];
+
+  try {
+    events = await fetchEvents(); // Función para obtener eventos desde la base de datos
+  } catch (error) {
+    console.error("Error fetching events:", error);
+  }
+
+  return {
+    props: {
+      events,
+    },
+  };
 }

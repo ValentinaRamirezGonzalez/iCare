@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import styles from "../app/styles/listadoForo.module.css";
-import { useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import Skeleton from "@/app/components/Skeleton";
+
 
 
 
@@ -50,7 +51,7 @@ export default function Foro() {
   };
 
 
-  if (!session || status === 'loading' || loading) {
+  if (status === 'loading' || loading) {
     return (
       <div className={styles.skeletonContainer}>
         <Skeleton />
@@ -60,6 +61,7 @@ export default function Foro() {
       </div>
     )
   }
+
 
   
   return (
@@ -95,4 +97,32 @@ export default function Foro() {
       </div>
     </div>
   );
+}
+
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  let posts = [];
+
+  try {
+    posts = await fetchPosts(); // Función para obtener posts desde la base de datos
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+  }
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
