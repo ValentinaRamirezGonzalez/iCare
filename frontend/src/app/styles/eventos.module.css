@@ -1,15 +1,32 @@
 .contenedor{
- display: flex;
- flex-direction: column;
- margin: 0 auto;
+    margin: 0 auto;
 
 }
+.container {
+    display:grid;
+   grid-template-columns: repeat(2,1fr);
+   margin: 0 auto;
+
+}
+@media(max-width:768px){
+    .container {
+    display: flex;
+    flex-direction: column;
+    
+    }
+
+}
+.container li{
+    list-style: none;
+}
+
 .contenedor h3{
     color: #796EFF;
     font-weight: bold;
     font-size: 1.5rem;
 }
 .contenido{
+    
     margin: 0 auto;
     background-color: #F0EBFA;
     padding: 1rem;

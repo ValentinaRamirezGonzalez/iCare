@@ -4,11 +4,22 @@
     margin-top: 2rem;
     text-align: center;
 }
+.foro{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+@media(max-width:768px){
+    .foro{
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
 .contenido{
     background-color:  #F0EBFA;
     width: 90%;
     margin: 1rem auto;
-    height: 10rem;
+    height: 15rem;
     word-wrap: break-word;
     padding: .5rem;
     overflow-y: scroll;

@@ -9,15 +9,15 @@ function Footer() {
   return (
     <div className={styles.footer}>
             <ul>
-                <li>iCare</li>
-                <li>Sobre Nosotros</li>
-                <li>Foro</li>
-                <li>Contacto</li>
+                <li> <a href="/">iCare</a></li>
+                <li> <a href="/dashboard/Nosotros">Sobre Nosotros</a></li>
+                <li><a href="/dashboard/Foro">Foro</a></li>
+                <li><a href="/dashboard/Eventos">Eventos</a></li>
             </ul>
 
             <ul>
                 <li>Soporte</li>
-                <li>Ayuda</li>
+                <li><a href="/dashboard/Hablemos">Chat</a></li>
                 <li>Comunidad</li>
             </ul>
             <ul>
@@ -26,15 +26,9 @@ function Footer() {
                 <li>Politicas de Privacidad</li>
                 <li>Terminos del Servicio</li>
             </ul>
+
+            <p> <span>&copy;</span>Valentina Ramirez 2024</p>
         
-
-        <div className={styles.iconos}>
-            <p>Instala la Aplicacion</p>
-
-            <Image src={google} width={200} height={150} alt='imagen google'/>
-            <Image src={Appstore} width={200} height={150} alt='imagen appstore'/>
-
-        </div>
 
 
       

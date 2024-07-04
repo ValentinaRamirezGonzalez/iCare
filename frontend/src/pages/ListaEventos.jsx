@@ -65,8 +65,9 @@ export default function ListadoEventos() {
   return (
     <div className={styles.titulo}>
       <h1>Eventos</h1>
-      <ul>
+      <ul className={styles.container}>
         {events.map(event => (
+         
           <li key={event.id} className={styles.contenedor}>
             <div className={styles.contenido}>
             <h3>{event.title}</h3>
@@ -77,6 +78,7 @@ export default function ListadoEventos() {
                 <button onClick={() => handleDelete(event.id)}>Eliminar</button>)}
             </div>
           </li>
+          
         ))}
       </ul>
     </div>

@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "../app/styles/listadoForo.module.css";
 import { getSession, useSession } from "next-auth/react";
 import Skeleton from "@/app/components/Skeleton";
-
-
-
+import supabase from "@/libs/supabaseClient.js";
 
 export default function Foro() {
 
@@ -31,8 +29,10 @@ export default function Foro() {
       setLoading(false)
     }
 
-    fetchPosts()
-  }, [])
+    fetchPosts();
+
+}, []);
+  
 
   const handleDelete = async (postId) => {
     try {
@@ -76,7 +76,7 @@ export default function Foro() {
         el foro!
       </p>
 
-      <div>
+      <div className={styles.foro}>
         {posts.map((post) => (
           <div key={post.id}>
             <div className={styles.contenido}>
